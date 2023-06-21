@@ -13,7 +13,7 @@
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid px-6">
-      <h1 class="mt-4">Tables</h1>
+      <h1 class="mt-4">Data Jadwal</h1>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
         <li class="breadcrumb-item active">Jadwal</li>
@@ -121,7 +121,7 @@
 
 
 <!-- Modal input data -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -160,10 +160,10 @@
           <div class="col-md-12">
             <label for="inputRuangan" class="form-label">Ruangan</label>
             <input type="text" class="form-control" id="inputRuangan" name="ruangan">
-          </div>
+          </div> -->
           <!-- Masih milik form -->
 
-      </div>
+      <!-- </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary" name="tambah_jadwal">Save changes</button>
@@ -171,7 +171,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>
