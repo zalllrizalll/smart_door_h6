@@ -9,23 +9,45 @@ if (!$_SESSION['login']) {
   header('Location:login.php');
 }
 
-# Template alert javascript
-$path = $_SERVER['REQUEST_URI'];
-$filename = basename($path);
-# $filename = substr(strrchr($path, "/"), 1); opsi lain
+// Get status message 
+if(!empty($_GET['status'])){ 
+  switch($_GET['status']){ 
+      case 'succ': 
+          $statusType = 'alert-success'; 
+          $statusMsg = 'Member data has been imported successfully.'; 
+          break; 
+      case 'err': 
+          $statusType = 'alert-danger'; 
+          $statusMsg = 'Something went wrong, please try again.'; 
+          break; 
+      case 'invalid_file': 
+          $statusType = 'alert-danger'; 
+          $statusMsg = 'Please upload a valid Excel file.'; 
+          break; 
+      default: 
+          $statusType = ''; 
+          $statusMsg = ''; 
+  }
+} 
 
-$berhasil = "<script>alert('Berhasil menambah data!');document.location.href = '" . $filename . "';</script>";
-$gagal = "<script>alert('Gagal menambah data!');</script>";
+// # Template alert javascript
+// $path = $_SERVER['REQUEST_URI'];
+// $filename = basename($path);
+// # $filename = substr(strrchr($path, "/"), 1); opsi lain
 
-# Tambah data jadwal
-if (isset($_POST['tambah_jadwal'])) echo (tambah_jadwal($_POST) > 0) ? $berhasil : $gagal;
+// $berhasil = "<script>alert('Berhasil menambah data!');document.location.href = '" . $filename . "';</script>";
+// $gagal = "<script>alert('Gagal menambah data!');</script>";
+
+// # Tambah data jadwal
+// if (isset($_POST['tambah_jadwal'])) echo (tambah_jadwal($_POST) > 0) ? $berhasil : $gagal;
 
 # Tambah data mahasiswa
 
 # Tambah data staf
 
 ?>
-
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="fontawesome/css/all.css">
 <!DOCTYPE html>
 <html lang="en">
 

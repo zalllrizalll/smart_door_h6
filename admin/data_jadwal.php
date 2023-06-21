@@ -1,18 +1,53 @@
 <?php require_once __DIR__ . "/header.php"; ?>
+
+<script>
+  function formToggle(ID){
+    var element = document.getElementById(ID);
+    if(element.style.display === "none"){
+        element.style.display = "block";
+    } else {
+        element.style.display = "none";
+    }
+  }
+</script>
 <div id="layoutSidenav_content">
   <main>
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-6">
       <h1 class="mt-4">Tables</h1>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
         <li class="breadcrumb-item active">Jadwal</li>
       </ol>
-      <div class="card mb-4">
-        <div class="card-body">
-          Untuk menambahkan data jadwal.
-          <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"> Klik disini</a>
-        </div>
+      <!-- Display status message -->
+      <?php if(!empty($statusMsg)){ ?>
+      <div class="col-xs-12 p-3">
+          <div class="alert <?php echo $statusType; ?>"><?php echo $statusMsg; ?></div>
       </div>
+      <?php } ?>
+      <div class="row p-3">
+          <!-- Import Link -->
+          <div class="col-md-12 head">
+              <div class="float-end">
+                <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');">
+                <i class="fa-solid fa-plus" style="color: #ffffff;"></i> Import Excel</a>
+              </div>
+          </div>
+
+          <!-- Excel file upload form -->
+          <div class="col-md-12" id="importFrm" style="display: none;">
+              <form class="row g-3" action="/landing/vendor/importData.php" method="post" enctype="multipart/form-data">
+                  <div class="col-auto">
+                      <label for="fileInput" class="visually-hidden">File</label>
+                      <input type="file" class="form-control" name="file" id="fileInput" />
+                  </div>
+                  <div class="col-auto">
+                      <input type="submit" class="btn btn-primary mb-3" name="importSubmit" value="Import">
+                  </div>
+              </form>
+          </div>
+      </div>
+      
+      <!-- Data List Table -->
       <div class="card mb-4">
         <div class="card-header">
           <i class="fas fa-table me-1"></i>
@@ -43,23 +78,26 @@
               </tr>
             </tfoot>
             <tbody>
-
               <?php
               # menampilkan data jadwal 
-              $data = query("SELECT * FROM jadwal");
-              foreach ($data as $row) : ?>
-                <tr>
-                  <td><?= $row['id_jadwal'] ?></td>
-                  <td><?= $row['id_mhs'] ?></td>
-                  <td><?= $row['tanggal'] ?></td>
-                  <td><?= $row['jam_masuk'] . ".00" ?></td>
-                  <td><?= $row['jam_keluar'] . ".00" ?></td>
-                  <td><?= $row['ruangan'] ?></td>
-                  <td>
-                    <a href="">Edit</a> | <a href="">Hapus</a>
-                  </td>
-                </tr>
-              <?php endforeach; ?>
+              $data = $conn->query("SELECT * FROM jadwal ORDER BY id_jadwal ASC");
+              if($data -> num_rows > 0){
+                foreach ($data as $row) : ?>
+                  <tr>
+                    <td><?= $row['id_jadwal'] ?></td>
+                    <td><?= $row['id_mhs'] ?></td>
+                    <td><?= $row['tanggal'] ?></td>
+                    <td><?= $row['jam_masuk'] . ".00" ?></td>
+                    <td><?= $row['jam_keluar'] . ".00" ?></td>
+                    <td><?= $row['ruangan'] ?></td>
+                    <td>
+                      <a href="">Edit</a> | <a href="">Hapus</a>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+                <?php } else{ ?>
+                    <tr><td colspan="7">No member(s) found...</td></tr>
+                <?php } ?>
             </tbody>
           </table>
         </div>
