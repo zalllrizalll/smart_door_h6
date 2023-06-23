@@ -8,7 +8,6 @@ require_once __DIR__ . "/function.php";
 if (!$_SESSION['login']) {
   header('Location:login.php');
 }
-
 // Get status message 
 if(!empty($_GET['status'])){ 
   switch($_GET['status']){ 

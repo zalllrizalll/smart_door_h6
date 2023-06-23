@@ -19,7 +19,7 @@
         <li class="breadcrumb-item active">Jadwal</li>
       </ol>
       <!-- Display status message -->
-      <?php if(!empty($statusMsg)){ ?>
+      <?php if(!empty($_GET['status'])){ ?>
       <div class="col-xs-12 p-3">
           <div class="alert <?php echo $statusType; ?>"><?php echo $statusMsg; ?></div>
       </div>
@@ -35,10 +35,10 @@
 
           <!-- Excel file upload form -->
           <div class="col-md-12" id="importFrm" style="display: none;">
-              <form class="row g-3" action="/landing/vendor/importData.php" method="post" enctype="multipart/form-data">
+              <form class="row g-3" action="importData.php" method="post" enctype="multipart/form-data">
                   <div class="col-auto">
                       <label for="fileInput" class="visually-hidden">File</label>
-                      <input type="file" class="form-control" name="file" id="fileInput" />
+                      <input type="file" class="form-control" name="excel" id="fileInput" required/>
                   </div>
                   <div class="col-auto">
                       <input type="submit" class="btn btn-primary mb-3" name="importSubmit" value="Import">
@@ -54,7 +54,7 @@
           Data Jadwal
         </div>
         <div class="card-body">
-          <table id="datatablesSimple">
+          <table id="datatablesSimple" class="table">
             <thead>
               <tr>
                 <th>Id</th>
@@ -80,9 +80,10 @@
             <tbody>
               <?php
               # menampilkan data jadwal 
-              $data = $conn->query("SELECT * FROM jadwal ORDER BY id_jadwal ASC");
+              $data = mysqli_query($conn, "SELECT * FROM jadwal ORDER BY id_jadwal ASC");
               if($data -> num_rows > 0){
-                foreach ($data as $row) : ?>
+                foreach($data as $row) :
+                  ?>
                   <tr>
                     <td><?= $row['id_jadwal'] ?></td>
                     <td><?= $row['id_mhs'] ?></td>
@@ -94,10 +95,13 @@
                       <a href="">Edit</a> | <a href="">Hapus</a>
                     </td>
                   </tr>
-                <?php endforeach; ?>
-                <?php } else{ ?>
-                    <tr><td colspan="7">No member(s) found...</td></tr>
-                <?php } ?>
+                  <?php endforeach; ?>
+                <?php 
+                }else{ 
+                  ?>
+                  <tr><td colspan="7">No member(s) found...</td></tr>
+                  <?php 
+                } ?>
             </tbody>
           </table>
         </div>
