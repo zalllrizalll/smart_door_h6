@@ -200,13 +200,13 @@ $dsn_out = mysqli_query($conn, "SELECT COUNT(id) AS jumlah FROM log_akses_staf  
     labels: [<?php while($data = mysqli_fetch_array($data_dsn)) {echo '"'.$data['tgl'].'",';}?>],
             datasets: [
             {
-              label: "Mahasiswa Check In",
+              label: "Staf Check In",
               data: [<?php while($data = mysqli_fetch_array($dsn_in)) {echo '"'.$data['jumlah'].'",';}?>],
               backgroundColor: ['rgb(255, 99, 132)', 'rgba(56, 86, 255, 0.87)', 'rgb(60, 179, 113)','rgb(175, 238, 239)'],
               borderColor: ['rgb(255, 99, 132)']
             },
             {
-              label: "Mahasiswa Check Out",
+              label: "Staf Check Out",
               data: [<?php while($data = mysqli_fetch_array($dsn_out)) {echo '"'.$data['jumlah'].'",';}?>],
               backgroundColor: ['rgb(255, 99, 132)', 'rgba(56, 86, 255, 0.87)', 'rgb(60, 179, 113)','rgb(175, 238, 239)'],
               borderColor: ['rgb(255, 99, 132)']
