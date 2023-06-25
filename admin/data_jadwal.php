@@ -70,17 +70,6 @@ require_once __DIR__ . "/../helper/Query.php";
                 <th>Aksi</th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <th>Id</th>
-                <th>Id mhs</th>
-                <th>Tanggal</th>
-                <th>Jam Masuk</th>
-                <th>Jam Keluar</th>
-                <th>Ruangan</th>
-                <th>Aksi</th>
-              </tr>
-            </tfoot>
             <tbody>
               <?php
               # menampilkan data jadwal 
