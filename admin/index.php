@@ -52,7 +52,7 @@ $dsn_out = mysqli_query($conn, "SELECT COUNT(id) AS jumlah FROM log_akses_staf  
           <div class="card mb-4">
             <div class="card-header">
               <i class="fas fa-chart-area me-1"></i>
-              Chart Mahasiswa Masuk dan Keluar
+              Chart Mahasiswa
             </div>
             <div class="card-body">
                 <canvas id="barchartmhs" width="100%" height="40"></canvas>
@@ -63,7 +63,7 @@ $dsn_out = mysqli_query($conn, "SELECT COUNT(id) AS jumlah FROM log_akses_staf  
           <div class="card mb-4">
             <div class="card-header">
               <i class="fas fa-chart-area me-1"></i>
-              Chart Staf Masuk dan Keluar
+              Chart Staf
             </div>
             <div class="card-body">
                 <canvas id="barchartdsn" width="100%" height="40"></canvas>

@@ -149,10 +149,6 @@ if(!empty($_GET['status'])){
               <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
               Charts
             </a>
-            <a class="nav-link" href="tables.html">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-              Tables
-            </a>
           </div>
         </div>
       </nav>
