@@ -38,7 +38,7 @@
               <form class="row g-3" action="importData.php" method="post" enctype="multipart/form-data">
                   <div class="col-auto">
                       <label for="fileInput" class="visually-hidden">File</label>
-                      <input type="file" class="form-control" name="excel" id="fileInput" required/>
+                      <input type="file" class="form-control" name="file" id="fileInput" required/>
                   </div>
                   <div class="col-auto">
                       <input type="submit" class="btn btn-primary mb-3" name="importSubmit" value="Import">
@@ -80,7 +80,7 @@
             <tbody>
               <?php
               # menampilkan data jadwal 
-              $data = mysqli_query($conn, "SELECT * FROM jadwal ORDER BY id_jadwal ASC");
+              $data = $conn -> query("SELECT * FROM jadwal ORDER BY id_jadwal ASC");
               if($data -> num_rows > 0){
                 foreach($data as $row) :
                   ?>
