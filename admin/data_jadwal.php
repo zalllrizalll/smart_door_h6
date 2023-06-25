@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . "/header.php"; ?>
+<?php 
+require_once __DIR__ . "/header.php"; 
+require_once __DIR__ . "/../helper/Query.php";
+?>
 
 <script>
   function formToggle(ID){
@@ -10,10 +13,11 @@
     }
   }
 </script>
+
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid px-6">
-      <h1 class="mt-4">Data Jadwal</h1>
+      <h1 class="mt-4"><b>Data Jadwal</b></h1>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
         <li class="breadcrumb-item active">Jadwal</li>

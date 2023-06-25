@@ -110,7 +110,7 @@ if(!empty($_GET['status'])){
               <nav class="sb-sidenav-menu-nested nav">
                 <a class="nav-link" href="data_jadwal.php">Data Jadwal</a>
                 <a class="nav-link" href="data_mahasiswa.php">Data Mahasiswa</a>
-                <a class="nav-link" href="data_staf.php">Data staf</a>
+                <a class="nav-link" href="data_staf.php">Data Staf</a>
               </nav>
             </div>
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

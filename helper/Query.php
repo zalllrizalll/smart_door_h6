@@ -66,4 +66,24 @@ class Query
 
         return true;
     }
+    // Delete data berdasarkan id mahasiswa
+    public static function deleteData($id, $conn){
+        // Query untuk mencari data mahasiswa
+        $query = "SELECT * FROM jadwal WHERE id_mhs = '$id'";
+
+        // Menjalankan query
+        $result = $conn->query($query);
+
+        // Memeriksa apakah data ditemukan
+        if($result->num_rows > 0){
+            $delete = "DELETE FROM jadwal WHERE id_mhs = '"+$id+"'";
+            return $conn->query($delete);
+        } else {
+            echo "
+            <script>
+                alert('Delete data failed!');
+            </script>
+            ";
+        }
+    }
 }
