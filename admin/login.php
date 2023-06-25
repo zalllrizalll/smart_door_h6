@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-lg-5">
               <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header">
-                  <h3 class="text-center font-weight-light my-4">Login Admin</h3>
+                  <h3 class="text-center font-weight-light my-4"><b>Login Admin</b></h3>
                 </div>
                 <div class="card-body">
                   <?php if (isset($alert)) : ?>
@@ -65,14 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
                       <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                     </div>
-                    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                    <div class="d-flex align-items-center justify-content-between mt-2 mb-0">
                       <a class="small" href="password.html">Forgot Password?</a>
                       <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                   </form>
                 </div>
                 <div class="card-footer text-center py-3">
-                  <a class="small" href="../">@Bengkel Koding</a>
                 </div>
               </div>
             </div>
