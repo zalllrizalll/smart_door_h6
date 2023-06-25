@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body class="bg-success">
+<body class="bg-dark">
   <div id="layoutAuthentication">
     <div id="layoutAuthentication_content">
       <main>
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   </form>
                 </div>
                 <div class="card-footer text-center py-3">
-                  <a class="small" href="../">@smart_door_h6</a>
+                  <a class="small" href="../">@Bengkel Koding</a>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <footer class="py-4 bg-light mt-auto">
         <div class="container-fluid px-4">
           <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Smart Door H6 2023</div>
+            <div class="text-muted">Copyright &copy; Bengkel Koding 2023</div>
           </div>
         </div>
       </footer>

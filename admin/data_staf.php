@@ -5,7 +5,7 @@
       <h1 class="mt-4">Data Staf</h1>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item active">Staf</li>
       </ol>
       <div class="card mb-4">
         <div class="card-header">
@@ -54,7 +54,7 @@
   <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid px-4">
       <div class="d-flex align-items-center justify-content-between small">
-        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+        <div class="text-muted">Copyright &copy; Bengkel Koding 2023</div>
         <div>
           <a href="#">Privacy Policy</a>
           &middot;
