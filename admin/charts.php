@@ -14,7 +14,7 @@ $dsn_out = mysqli_query($conn, "SELECT COUNT(id) AS jumlah FROM log_akses_staf  
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid px-4">
-      <h1 class="mt-4">Chart</h1>
+      <h1 class="mt-4"><b>Chart</b></h1>
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Chart</li>
       </ol>
