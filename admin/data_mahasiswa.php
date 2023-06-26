@@ -15,8 +15,7 @@
         <div class="card-body">
           <table id="datatablesSimple">
             <thead>
-              <tr>
-                <th>id</th>
+              <tr>  
                 <th>Nim</th>
                 <th>Nama</th>
                 <th>Angkatan</th>
@@ -25,17 +24,6 @@
                 <th>Aksi</th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <th>id</th>
-                <th>Nim</th>
-                <th>Nama</th>
-                <th>Angkatan</th>
-                <th>Fakultas</th>
-                <th>Progdi</th>
-                <th>Aksi</th>
-              </tr>
-            </tfoot>
             <tbody>
 
               <?php
@@ -43,7 +31,6 @@
               $data = query("SELECT * FROM mahasiswa");
               foreach ($data as $row) : ?>
                 <tr>
-                  <td><?= $row['id_mhs'] ?></td>
                   <td><?= $row['nim'] ?></td>
                   <td><?= $row['nama'] ?></td>
                   <td><?= $row['angkatan'] ?></td>

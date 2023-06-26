@@ -16,20 +16,11 @@
           <table id="datatablesSimple">
             <thead>
               <tr>
-                <th>Id</th>
                 <th>NPP</th>
                 <th>Nama</th>
                 <th>Aksi</th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <th>Id</th>
-                <th>NPP</th>
-                <th>Nama</th>
-                <th>Aksi</th>
-              </tr>
-            </tfoot>
             <tbody>
 
               <?php
@@ -37,7 +28,6 @@
               $data = query("SELECT * FROM staf");
               foreach ($data as $row) : ?>
                 <tr>
-                  <td><?= $row['id_staf'] ?></td>
                   <td><?= $row['npp'] ?></td>
                   <td><?= $row['nama'] ?></td>
                   <td>

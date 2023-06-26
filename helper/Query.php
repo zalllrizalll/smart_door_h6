@@ -32,7 +32,7 @@ class Query
 
         $in = mysqli_num_rows(mysqli_query($conn, $checkin));
         $out = mysqli_num_rows(mysqli_query($conn, $checkout));
-
+        
         return $in - $out;
     }
 

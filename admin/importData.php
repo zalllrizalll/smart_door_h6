@@ -24,23 +24,23 @@ if(isset($_POST['importSubmit'])){
             unset($worksheet_arr[0]); 
  
             foreach($worksheet_arr as $row){ 
-                $id_jadwal = $row[0]; 
-                $id_mhs = $row[1]; 
-                $tanggal = $row[2]; 
-                $jam_masuk = $row[3]; 
-                $jam_keluar = $row[4];
-                $ruangan = $row[5];
+                $id_jadwal = $row[0];  
+                $tanggal = $row[1]; 
+                $jam_masuk = $row[2]; 
+                $jam_keluar = $row[3];
+                $ruangan = $row[4];
+                $nim = $row[5];
  
                 // Check whether member already exists in the database with the same email 
-                $prevQuery = "SELECT id_mhs FROM jadwal WHERE id_jadwal = '".$id_jadwal."'"; 
+                $prevQuery = "SELECT jadwal.id_jadwal, jadwal.tanggal, jadwal.jam_masuk, jadwal.jam_keluar, jadwal.ruangan, mahasiswa.nim FROM jadwal JOIN mahasiswa ON jadwal.nim = mahasiswa.nim WHERE mahasiswa.nim = '".$nim."'"; 
                 $prevResult = $conn->query($prevQuery); 
                  
                 if($prevResult->num_rows > 0){ 
                     // Update member data in the database 
-                    $conn->query("UPDATE jadwal SET id_mhs = '".$id_mhs."', tanggal = '".$tanggal."', jam_masuk = '".$jam_masuk."', jam_keluar = '".$jam_keluar."', ruangan = '".$ruangan."' WHERE id_jadwal = '".$id_jadwal."'"); 
+                    $conn->query("UPDATE jadwal SET tanggal = '".$tanggal."', jam_masuk = '".$jam_masuk."', jam_keluar = '".$jam_keluar."', ruangan = '".$ruangan."', nim = '".$nim."' WHERE id_jadwal = '".$id_jadwal."'"); 
                 }else{ 
                     // Insert member data in the database 
-                    $conn->query("INSERT INTO jadwal (id_jadwal, id_mhs, tanggal, jam_masuk, jam_keluar, ruangan) VALUES ('".$id_jadwal."', '".$id_mhs."', '".$tanggal."', '".$jam_masuk."', '".$jam_keluar."', '".$ruangan."')"); 
+                    $conn->query("INSERT INTO jadwal (id_jadwal, tanggal, jam_masuk, jam_keluar, ruangan, nim) VALUES ('".$id_jadwal."', '".$tanggal."', '".$jam_masuk."', '".$jam_keluar."', '".$ruangan."', '".$nim."')"); 
                 } 
             } 
             $qstring = '?status=succ'; 

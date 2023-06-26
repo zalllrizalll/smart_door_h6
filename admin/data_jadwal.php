@@ -61,8 +61,7 @@ require_once __DIR__ . "/../helper/Query.php";
           <table id="datatablesSimple" class="table">
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Id mhs</th>
+                <th>Id Jadwal</th>
                 <th>Tanggal</th>
                 <th>Jam Masuk</th>
                 <th>Jam Keluar</th>
@@ -79,7 +78,6 @@ require_once __DIR__ . "/../helper/Query.php";
                   ?>
                   <tr>
                     <td><?= $row['id_jadwal'] ?></td>
-                    <td><?= $row['id_mhs'] ?></td>
                     <td><?= $row['tanggal'] ?></td>
                     <td><?= $row['jam_masuk'] . ".00" ?></td>
                     <td><?= $row['jam_keluar'] . ".00" ?></td>
@@ -92,7 +90,7 @@ require_once __DIR__ . "/../helper/Query.php";
                 <?php 
                 }else{ 
                   ?>
-                  <tr><td colspan="7">No member(s) found...</td></tr>
+                  <tr><td colspan="6">No member(s) found...</td></tr>
                   <?php 
                 } ?>
             </tbody>
