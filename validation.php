@@ -191,7 +191,7 @@ require_once __DIR__ . "/helper/Query.php";
             </div>
           </div>
         </div>
-        <?php
+        <?php Query::insertLogStaf($row['npp'], 'check in', $conn);
       }
     } else {
 

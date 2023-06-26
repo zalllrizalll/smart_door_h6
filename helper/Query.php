@@ -25,6 +25,12 @@ class Query
         mysqli_query($conn, $query);
     }
 
+    public static function insertLogStaf($identity, $status, $conn)
+    {
+        $query = "INSERT INTO log_akses_staf (id, status) VALUES ('$identity', '$status')";
+        mysqli_query($conn, $query);
+    }
+
     public static function counterStudentFree($date_now, $conn): int
     {
         $checkin = "SELECT * FROM log_akses WHERE tanggal = '$date_now' AND role = 'mahasiswa' AND status = 'check in' AND jadwal = 'tidak terjadwal'";
@@ -32,7 +38,7 @@ class Query
 
         $in = mysqli_num_rows(mysqli_query($conn, $checkin));
         $out = mysqli_num_rows(mysqli_query($conn, $checkout));
-        
+
         return $in - $out;
     }
 

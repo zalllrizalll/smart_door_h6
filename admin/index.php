@@ -96,19 +96,10 @@ $dsn_out = mysqli_query($conn, "SELECT COUNT(id) AS jumlah FROM log_akses_staf  
                 <th>Status</th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <th>Id</th>
-                <th>Kode</th>
-                <th>Nama</th>
-                <th>Waktu</th>
-                <th>Status</th>
-              </tr>
-            </tfoot>
             <tbody>
 
               <?php
-              # menampilkan data log akses
+              # menampilkan data log akses mahasiswa
               $data = query("SELECT a.id, a.kode, b.nama as nm_mhs, c.nama as nm_staf, a.waktu, a.status
                               FROM log_akses a
                               LEFT JOIN mahasiswa b ON b.nim = a.kode

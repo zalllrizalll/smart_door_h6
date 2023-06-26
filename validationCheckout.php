@@ -102,7 +102,7 @@ require_once __DIR__ . "/helper/Query.php";
 														<p class="card-text big"><?= $row['nim'] ?></p>
 													</li>
 													<li class="list-group-item">
-														<p class="card-text small"><small>Progam Studi</small></p>
+														<p class="card-text small"><small>Program Studi</small></p>
 														<p class="card-text big"><?= $row['progdi'] ?></p>
 													</li>
 												</ul>
