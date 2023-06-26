@@ -27,7 +27,7 @@ class Query
 
     public static function insertLogStaf($identity, $status, $conn)
     {
-        $query = "INSERT INTO log_akses_staf (id, status) VALUES ('$identity', '$status')";
+        $query = "INSERT INTO log_akses_staf (npp, status) VALUES ('$identity', '$status')";
         mysqli_query($conn, $query);
     }
 
